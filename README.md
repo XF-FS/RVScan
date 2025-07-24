@@ -1,6 +1,8 @@
 # Burp Suite 漏洞扫描与指纹识别扩展
 
 一个功能强大的 Burp Suite 扩展，集成了被动扫描、指纹识别、路径绕过等多种安全测试功能。
+原项目：https://github.com/F6JO/RouteVulScan
+参考：https://github.com/EdgeSecurityTeam/EHole
 
 ## 🚀 主要特性
 
