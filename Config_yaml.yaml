@@ -1,0 +1,65 @@
+Bypass_End_List: [;.js, .json, .js]
+Bypass_List: ["%2f", "%2e"]
+Bypass_First_List: [css/..;/..;, ..;, js/..;/..;]
+Fingerprint_Paths: ["/", "/console"]
+Load_List:
+  - {
+      loaded: true,
+      re: test1,
+      method: GET,
+      name: test1,
+      id: 1,
+      state: "200",
+      type: default,
+      body: "",
+      url: /aaa,
+      info: test1,
+    }
+  - {
+      loaded: true,
+      re: aaa1,
+      method: POST,
+      name: aaa1,
+      id: 10,
+      state: "200",
+      type: default,
+      body: '{"name":"dddd"}',
+      url: /ccc,
+      info: aaa1,
+    }
+  - {
+      loaded: true,
+      re: login,
+      method: GET,
+      name: get_login,
+      id: 11,
+      state: "200",
+      type: default,
+      body: "",
+      url: /login,
+      info: login,
+    }
+  - {
+      loaded: true,
+      re: login,
+      method: POST,
+      name: post_login,
+      id: 12,
+      state: "200",
+      type: default,
+      body: '{"username":"admin","password":"1233"}',
+      url: /login,
+      info: login,
+    }
+  - {
+      loaded: true,
+      re: aaa2,
+      method: POST,
+      name: aaa2,
+      id: 13,
+      state: "200",
+      type: default,
+      body: '{"name":"aaa"}',
+      url: /bbb,
+      info: aaa2,
+    }
