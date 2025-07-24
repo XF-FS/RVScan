@@ -165,54 +165,73 @@ Fingerprint_Paths: ["/", "/console"]
 ## 🔧 功能开关说明
 <img width="3200" height="1770" alt="PixPin_2025-07-24_14-45-26" src="https://github.com/user-attachments/assets/1f2801ab-96e9-4315-83ec-c418d592636e" />
 
+扩展界面提供了9个主要功能开关，用于控制不同的扫描和检测功能：
 
-### 扫描规则开关
+### 1. 主扫描开关 (Stop/Start)
+- **功能**: 控制整个扫描引擎的启停
+- **状态**: 
+  - `Stop` (绿色): 扫描引擎运行中，会对通过的HTTP请求进行被动扫描
+  - `Start` (默认色): 扫描引擎已停止，不进行任何扫描
+- **用途**: 临时暂停或启动所有扫描功能
 
-在 `Config_yaml.yaml` 中通过 `loaded` 字段控制：
+### 2. 携带头部开关 (Head_On/Head_Off)
+- **功能**: 控制是否在扫描请求中携带原始HTTP头部
+- **状态**:
+  - `Head_Off` (绿色): 启用，扫描请求会携带原始请求的头部信息
+  - `Head_On` (默认色): 禁用，扫描请求使用默认头部
+- **用途**: 绕过基于请求头的访问控制或身份验证
 
-```yaml
-# 启用规则
-- loaded: true
-  name: active_rule
-  
-# 禁用规则  
-- loaded: false
-  name: disabled_rule
-```
+### 3. 域名扫描开关 (DomainScan_On/DomainScan_Off)
+- **功能**: 控制是否对相同域名下的其他路径进行扫描
+- **状态**:
+  - `DomainScan_Off` (绿色): 启用域名扫描，会扫描同域名下的其他路径
+  - `DomainScan_On` (默认色): 禁用域名扫描，只扫描当前路径
+- **用途**: 扩大扫描范围，发现同域名下的其他漏洞点
 
-**效果：**
-- `loaded: true`: 规则参与扫描，会发送对应的HTTP请求
-- `loaded: false`: 规则被跳过，不会执行该扫描项
+### 4. 路径绕过开关 (Bypass_On/Bypass_Off)
+- **功能**: 控制是否使用URL编码等技术绕过路径过滤
+- **状态**:
+  - `Bypass_Off` (绿色): 启用路径绕过，使用 `Bypass_List` 中的编码字符
+  - `Bypass_On` (默认色): 禁用路径绕过
+- **用途**: 绕过WAF或应用层的路径过滤机制
 
-### 速率限制控制
+### 5. 前缀绕过开关 (Bypass_First_On/Bypass_First_Off)
+- **功能**: 控制是否在路径前添加绕过前缀
+- **状态**:
+  - `Bypass_First_Off` (绿色): 启用前缀绕过，使用 `Bypass_First_List` 中的前缀
+  - `Bypass_First_On` (默认色): 禁用前缀绕过
+- **用途**: 使用目录遍历和路径混淆技术绕过访问控制
 
-通过 `RateLimiter.java` 控制请求频率：
+### 6. 后缀绕过开关 (Bypass_End_On/Bypass_End_Off)
+- **功能**: 控制是否在路径后添加文件扩展名绕过
+- **状态**:
+  - `Bypass_End_Off` (绿色): 启用后缀绕过，使用 `Bypass_End_List` 中的扩展名
+  - `Bypass_End_On` (默认色): 禁用后缀绕过
+- **用途**: 通过添加文件扩展名绕过基于扩展名的过滤
 
-```java
-// 启用速率限制
-rateLimiter.setEnabled(true);
+### 7. EHole指纹扫描开关 (EHole_On/EHole_Off)
+- **功能**: 控制指纹识别功能的启停
+- **状态**:
+  - `EHole_Off` (绿色): 启用指纹扫描，会对目标进行CMS/框架识别
+  - `EHole_On` (默认色): 禁用指纹扫描
+- **用途**: 识别目标使用的CMS、框架或应用类型
+- **默认**: 初始状态为启用
 
-// 禁用速率限制  
-rateLimiter.setEnabled(false);
-```
+### 8. 线程状态查看 (Thread Status)
+- **功能**: 查看当前线程池和速率限制的状态信息
+- **用途**: 
+  - 显示活跃线程数、队列任务数
+  - 显示速率限制配置和当前请求频率
+  - 帮助调试性能问题
 
-**效果：**
-- 启用：严格控制每秒请求数，避免目标服务器过载
-- 禁用：不限制请求频率，最大化扫描速度
+### 9. 速率限制开关 (RateLimit_On/RateLimit_Off)
+- **功能**: 控制请求速率限制功能
+- **状态**:
+  - `RateLimit_On` (绿色): 启用速率限制，严格控制每秒请求数
+  - `RateLimit_Off` (默认色): 禁用速率限制，最大化扫描速度
+- **用途**: 避免对目标服务器造成过大压力，防止被WAF封禁
+- **默认**: 初始状态为启用
 
-### 线程池配置
-
-通过 `ThreadPoolManager.java` 控制并发：
-
-```java
-// 设置线程池大小
-ThreadPoolManager.getInstance().setCorePoolSize(10);
-ThreadPoolManager.getInstance().setMaxPoolSize(20);
-```
-
-**效果：**
-- 较小值：降低并发，减少资源消耗
-- 较大值：提高并发，加快扫描速度
 
 ## 📊 使用方法
 
@@ -277,26 +296,3 @@ Bypass_First_List:
 2. **性能影响**: 大量并发请求可能影响目标系统性能
 3. **误报处理**: 建议人工验证扫描结果
 4. **配置备份**: 定期备份自定义的配置文件
-
-## 🔍 故障排除
-
-### 常见问题
-
-1. **扫描规则不生效**
-   - 检查 `loaded` 字段是否为 `true`
-   - 验证YAML语法是否正确
-
-2. **指纹识别失败**
-   - 确认 `finger.json` 格式正确
-   - 检查关键词是否准确
-
-3. **请求频率过高**
-   - 启用速率限制功能
-   - 调整线程池大小
-
-### 日志查看
-
-扩展会在Burp Suite的输出面板显示详细日志：
-- `[Fingerprint]`: 指纹识别相关日志
-- `[Scanner]`: 扫描进程日志
-- `[Error]`: 错误信息
