@@ -17,6 +17,54 @@ Load_List:
     }
   - {
       loaded: true,
+      re: test2,
+      method: GET,
+      name: test2,
+      id: 4,
+      state: "200",
+      type: default,
+      body: "",
+      url: /aaa,
+      info: test2,
+    }
+  - {
+      loaded: true,
+      re: test3,
+      method: GET,
+      name: test3,
+      id: 5,
+      state: "200",
+      type: default,
+      body: "",
+      url: /aaa,
+      info: test3,
+    }
+  - {
+      loaded: true,
+      re: test4,
+      method: POST,
+      name: aaa4,
+      id: 8,
+      state: "200",
+      type: default,
+      body: '{"id":"test4",}',
+      url: /ccc,
+      info: test4,
+    }
+  - {
+      loaded: true,
+      re: test5,
+      method: POST,
+      name: test5,
+      id: 9,
+      state: "200",
+      type: default,
+      body: '{"username":"admin","password":"0470444e77df0b368e34dab912c43d8dad8755305fd67777eda864cf11faa87020dd6d30bebc5f811513b3709a64cf42e2cd040080c4943f386862e67364cd3e6238da474f3ac5a9d361cd509b2114c0a7131070a1bfa550ebd5a6ed54f3b271c268ef651d8e8f55b1","captcha":"1234","xm":"","qyqcOrQybh":"","domainname":"richful.easyfees.cn","sessionday":0,"crypto":"1","openid":"","loginType":"zh"}',
+      url: /ccc,
+      info: test5,
+    }
+  - {
+      loaded: true,
       re: aaa1,
       method: POST,
       name: aaa1,
@@ -47,7 +95,7 @@ Load_List:
       id: 12,
       state: "200",
       type: default,
-      body: '{"username":"admin","password":"1233"}',
+      body: '{"username":"admin","password":"0470444e77df0b368e34dab912c43d8dad8755305fd67777eda864cf11faa87020dd6d30bebc5f811513b3709a64cf42e2cd040080c4943f386862e67364cd3e6238da474f3ac5a9d361cd509b2114c0a7131070a1bfa550ebd5a6ed54f3b271c268ef651d8e8f55b1","captcha":"1234","xm":"","qyqcOrQybh":"","domainname":"richful.easyfees.cn","sessionday":0,"crypto":"1","openid":"","loginType":"zh"}',
       url: /login,
       info: login,
     }
