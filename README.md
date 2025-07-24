@@ -28,7 +28,30 @@ src/main/java/
 
 ## ⚙️ 配置文件说明
 
+如果需要手动管理配置文件，可以：
+
+1. 查看当前配置路径
+扩展启动时会在 Burp Suite 输出面板显示配置路径信息，默认位置同burpsuite_pro.jar文件同目录。
+
+2. 复制配置文件
+将项目根目录下的 `Config_yaml.yaml` 和 `finger.json` 复制到对应的配置目录。
+
+## 功能介绍
+
+### 指纹扫描功能
+
+通过识别finger.json中的规则，对当前访问路径、和Fingerprint_Paths: ["/", "/console"]中的路径进行指纹识别，如果识别成功展示相关指纹信息
+
+<img width="3200" height="1762" alt="PixPin_2025-07-24_14-40-07" src="https://github.com/user-attachments/assets/7d6f865f-dd6d-41ff-9ba5-b4ebd466cc40" />
+
+### 被动敏感信息扫描
+<img width="2952" height="884" alt="PixPin_2025-07-24_14-44-23" src="https://github.com/user-attachments/assets/feb9509b-265d-4331-b541-6fb3fcc2cdc4" />
+
+
+
 ### 1. 被动扫描规则配置 (`Config_yaml.yaml`)
+<img width="3200" height="1764" alt="PixPin_2025-07-24_14-35-54" src="https://github.com/user-attachments/assets/0836a113-adee-4da6-abac-510a80cb105d" />
+
 
 #### Load_List - 扫描规则配置
 
@@ -53,6 +76,10 @@ Load_List:
 - `method`: 支持 `GET` 和 `POST` 方法
 - `state`: 匹配的HTTP状态码，如 "200", "404", "500"
 - `body`: POST请求的JSON payload，支持复杂的认证数据
+
+### 2. 路径配置说明
+<img width="3200" height="1766" alt="PixPin_2025-07-24_14-37-19" src="https://github.com/user-attachments/assets/423e230d-cc89-4e1a-905a-3ad1cc9f8002" />
+
 
 #### 路径绕过配置
 
@@ -80,7 +107,9 @@ Fingerprint_Paths: ["/", "/console"]
 
 指定进行指纹识别的默认路径列表。
 
-### 2. 指纹识别规则配置 (`finger.json`)
+### 3. 指纹识别规则配置 (`finger.json`)
+<img width="3200" height="1764" alt="PixPin_2025-07-24_14-35-15" src="https://github.com/user-attachments/assets/7d72a322-4c44-499b-a6f2-13b996a584b9" />
+
 
 #### 指纹规则结构
 
@@ -134,6 +163,8 @@ Fingerprint_Paths: ["/", "/console"]
 - 其他: 匹配指定状态码
 
 ## 🔧 功能开关说明
+<img width="3200" height="1770" alt="PixPin_2025-07-24_14-45-26" src="https://github.com/user-attachments/assets/1f2801ab-96e9-4315-83ec-c418d592636e" />
+
 
 ### 扫描规则开关
 
