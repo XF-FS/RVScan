@@ -9,7 +9,8 @@
 
 - **🔍 被动扫描** - 自动检测敏感路径和接口
 
-<img width="2952" height="884" alt="PixPin_2025-07-24_14-44-23" src="https://github.com/user-attachments/assets/feb9509b-265d-4331-b541-6fb3fcc2cdc4" />
+<img width="3200" height="1714" alt="PixPin_2025-07-24_15-10-17" src="https://github.com/user-attachments/assets/9d00bf7a-5f36-4397-83f3-ef1de15b1361" />
+
 
 - **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法
 
