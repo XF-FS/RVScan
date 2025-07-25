@@ -205,3 +205,9 @@ Fingerprint_Paths: ["/", "/console", "/admin"]
 ## 📄 许可证
 
 本项目基于原项目进行开发和改进，请遵守相关开源协议。
+
+## 开心值
+
+
+[![Star History Chart](https://api.star-history.com/svg?repos=XF-FS/RVScan&type=Date)](https://star-history.com/?utm_source=bestxtools.com#XF-FS/RVScan&Date)
+
