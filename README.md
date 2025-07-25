@@ -40,6 +40,17 @@ src/main/java/
 2. 在Burp Suite中加载扩展
 3. 扩展会自动创建配置文件（与burpsuite_pro.jar同目录）
 
+如果首次加载报错可将配置文件放到指定位置（Config_yaml.yaml、finger.json）
+
+MacOS：/Applications/Burp Suite Professional.app/Contents/Resources/app/
+
+<img width="3110" height="1336" alt="PixPin_2025-07-25_22-52-41" src="https://github.com/user-attachments/assets/d02f5408-f6bc-44c5-942a-e3e37520363b" />
+
+Windows：（BURP安装位置即burpsuite_pro.jar同级目录）\BurpSuitePro/Config_yaml.yaml
+
+<img width="3084" height="1508" alt="PixPin_2025-07-25_23-13-40" src="https://github.com/user-attachments/assets/e21f3fb3-ec57-4568-9d59-48a65004c878" />
+
+
 ### 2. 配置文件
 
 扩展使用两个主要配置文件：
