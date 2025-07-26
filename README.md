@@ -2,6 +2,8 @@
 
 一个功能强大的 Burp Suite 扩展，集成了被动扫描、指纹识别、路径绕过等多种安全测试功能。
 
+## 2.1为重大更新，如果使用的是2.0版本，建议尽快升级
+
 **原项目**: [RouteVulScan](https://github.com/F6JO/RouteVulScan)  
 **指纹识别参考**: [EHole](https://github.com/EdgeSecurityTeam/EHole)
 
