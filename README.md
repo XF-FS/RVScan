@@ -9,12 +9,12 @@
 
 ## ✨ 核心功能
 
-- **🔍 被动扫描** - 自动检测敏感路径和接口
+- **🔍 被动扫描** - 自动检测敏感路径和接口通过对访问接口进行FUZZ，探测是否存在敏感信息漏洞接口（swagger、Spring Actuator、登陆后台、Ueditor上传、漏洞接口等）
 
 <img width="3200" height="1714" alt="PixPin_2025-07-24_15-10-17" src="https://github.com/user-attachments/assets/9d00bf7a-5f36-4397-83f3-ef1de15b1361" />
 
 
-- **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法
+- **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法（通过识别访问接口是否存在指定指纹，判断指纹信息，功能参考Ehole）
 
 <img width="3200" height="1762" alt="PixPin_2025-07-24_14-40-07" src="https://github.com/user-attachments/assets/7d6f865f-dd6d-41ff-9ba5-b4ebd466cc40" />
 
