@@ -93,13 +93,6 @@ Load_List:
 
 ### 路径绕过配置(Config_yaml.yaml)
 
-```yaml
-Bypass_End_List: [;.js, .json, .js]
-Bypass_List: ['%2f', '%2e']
-Bypass_First_List: [css/..;/..;, ..;, js/..;/..;]
-Fingerprint_Paths: [/]
-```
-
 <img width="3200" height="1766" alt="PixPin_2025-07-24_14-37-19" src="https://github.com/user-attachments/assets/423e230d-cc89-4e1a-905a-3ad1cc9f8002" />
 
 ```yaml
