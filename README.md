@@ -23,13 +23,17 @@
 
 ## 功能截图
 
-被动扫描
+**🔍 被动扫描** 
 
 <img width="3336" height="1760" alt="image" src="https://github.com/user-attachments/assets/c7e33abf-9918-4ebd-bb40-8f5c23f58155" />
 
-指纹识别
+**🎯 指纹识别**
 
 <img width="3320" height="1782" alt="image" src="https://github.com/user-attachments/assets/04249625-8d8b-4973-9ccb-e8909271e29f" />
+
+**⚙️ 规则配置**
+
+<img width="3200" height="1764" alt="PixPin_2025-07-24_14-35-54" src="https://github.com/user-attachments/assets/0836a113-adee-4da6-abac-510a80cb105d" />
 
 
 ## 📁 项目结构
