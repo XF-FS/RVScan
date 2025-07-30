@@ -9,18 +9,28 @@
 
 ## ✨ 核心功能
 
-- **🔍 被动扫描** - 自动检测敏感路径和接口通过对访问接口进行FUZZ，探测是否存在敏感信息漏洞接口（swagger、Spring Actuator、登陆后台、Ueditor上传、漏洞接口等）
+- **🔍 被动扫描** - 自动检测敏感路径和接口通过对访问接口递归对每一层路径进行路径探测，探测是否存在敏感信息漏洞接口
+  
+  `如访问的是/admin/auth/api/update，会访问/*、/admin/*、/admin/auth/*、/admin/auth/api/*、/admin/auth/api/update/*`
 
-<img width="3200" height="1714" alt="PixPin_2025-07-24_15-10-17" src="https://github.com/user-attachments/assets/9d00bf7a-5f36-4397-83f3-ef1de15b1361" />
-
-
-- **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法（通过识别访问接口是否存在指定指纹，判断指纹信息，功能参考Ehole）
-
-<img width="3200" height="1762" alt="PixPin_2025-07-24_14-40-07" src="https://github.com/user-attachments/assets/7d6f865f-dd6d-41ff-9ba5-b4ebd466cc40" />
-
+  `一般可探测出如Swagger接口、登陆后台、漏洞路径、配置文件、spring env等泄露信息`
+- **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法
+  
+  `通过识别访问接口是否存在指定指纹，判断指纹信息，功能参考Ehole`
 - **🚀 路径绕过** - 内置多种绕过技术和payload
 - **⚡ 多线程扫描** - 可配置并发数和速率限制
 - **📊 实时监控** - 扫描进度和结果实时显示
+
+## 功能截图
+
+被动扫描
+
+<img width="3336" height="1760" alt="image" src="https://github.com/user-attachments/assets/c7e33abf-9918-4ebd-bb40-8f5c23f58155" />
+
+指纹识别
+
+<img width="3320" height="1782" alt="image" src="https://github.com/user-attachments/assets/04249625-8d8b-4973-9ccb-e8909271e29f" />
+
 
 ## 📁 项目结构
 
