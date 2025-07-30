@@ -11,7 +11,7 @@
 
 - **🔍 被动扫描** - 自动检测敏感路径和接口通过对访问接口递归对每一层路径进行路径探测，探测是否存在敏感信息漏洞接口
   
-  > 💡 访问/admin/auth/api，递归探测会访问/ *、/admin/ *、/admin/auth/ *、/admin/auth/api/ *
+  > 💡 访问/admin/auth/api，递归探测会访问/\*、/admin/\*、/admin/auth/\*、/admin/auth/api/\*
   
   > 💡 一般可探测出如Swagger接口、登陆后台、漏洞路径、配置文件、spring env等泄露信息
 - **🎯 指纹识别** - 支持关键词、favicon hash等多种识别方法
