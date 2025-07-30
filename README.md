@@ -136,7 +136,6 @@ Fingerprint_Paths: ["/", "/console", "/admin"]
 | **Bypass_End** | 后缀绕过 | Bypass_End_Off (绿色) | Bypass_End_On (默认) |
 | **EHole** | 指纹识别 | EHole_Off (绿色) | EHole_On (默认) |
 | **Thread Status** | 查看线程状态 | - | - |
-| **RateLimit** | 速率限制 | RateLimit_On (绿色) | RateLimit_Off (默认) |
 
 > 💡 **提示**: 绿色按钮表示功能已启用，默认颜色表示功能已禁用
 
