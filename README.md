@@ -2,7 +2,7 @@
 
 一个功能强大的 Burp Suite 扩展，集成了被动扫描、指纹识别、路径绕过等多种安全测试功能。
 
-## 有啥需求，有啥想法都可以在Issues中提出，可以一起共创一下🐶
+## 有啥需求，有啥想法都可以在Issues中提出，一起共创下
 
 **原项目**: [RouteVulScan](https://github.com/F6JO/RouteVulScan)  
 **指纹识别参考**: [EHole](https://github.com/EdgeSecurityTeam/EHole)
