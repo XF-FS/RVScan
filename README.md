@@ -4,7 +4,7 @@
 
 ## 有啥需求，有啥想法都可以在Issues中提出，一起共创下
 
-**原项目**: [RouteVulScan](https://github.com/F6JO/RouteVulScan)  
+**原项目（扫描功能参考）**: [RouteVulScan](https://github.com/F6JO/RouteVulScan)  
 **指纹识别参考**: [EHole](https://github.com/EdgeSecurityTeam/EHole)
 
 ## ✨ 核心功能
