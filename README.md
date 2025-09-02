@@ -135,11 +135,11 @@ Fingerprint_Paths: ["/", "/console", "/admin"]
 
 cms：系统名称
 
-method：识别方式 (支持三种识别方式，分别为：keyword、faviconhash、regula)
+method：识别方式 (支持二种识别方式，分别为：keyword、faviconhash)
 
 location：位置（指纹识别位置，提供两个位置，一个为body，一个为header）
 
-keyword：关键字（favicon图标hash、正则表达式、关键字，可使用,分割支持多个规则匹配，多规则是AND关系）
+keyword：关键字（当method输入keyword参数keyword可输入正则表达式、关键字；当method输入faviconhash参数keyword就只能输入favicon图标hash；可使用,分割支持多个规则匹配，多规则是AND关系）
 
 ## 🎛️ 功能控制面板
 
