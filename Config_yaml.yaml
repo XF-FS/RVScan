@@ -2,6 +2,7 @@ Bypass_End_List: [;.js, .json, .js]
 Bypass_List: ["%2f", "%2e"]
 Bypass_First_List: [css/..;/..;, ..;, js/..;/..;]
 Fingerprint_Paths: ["/"]
+Result_Filter_List: [认证失败, Authentication Failed]
 Load_List:
 - {loaded: true, re: springframework|reloadByURL|createJNDIRealm, method: GET, name: Spring
     Jolokia|Rce, id: 8, state: '200', type: Spring, url: /actuator/jolokia/list, info: 'Spring
