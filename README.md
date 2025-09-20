@@ -92,7 +92,8 @@ Load_List:
 
 ### 路径绕过配置(Config_yaml.yaml)
 
-<img width="3200" height="1766" alt="PixPin_2025-07-24_14-37-19" src="https://github.com/user-attachments/assets/423e230d-cc89-4e1a-905a-3ad1cc9f8002" />
+<img width="3360" height="1868" alt="59ed3658084116c08a3c75248a202e96" src="https://github.com/user-attachments/assets/834206cc-5a86-4f72-8d03-3ba766f67bf8" />
+
 
 ```yaml
 # URL编码绕过
@@ -106,6 +107,9 @@ Bypass_End_List: [".js", ".json", ";.js"]
 
 # 指纹识别路径
 Fingerprint_Paths: ["/", "/console", "/admin"]
+
+# 被动扫描结果过滤
+Result_Filter_List: [认证失败, 访问失败, 权限不足, Access Denied, Authentication Failed, Unauthorized]
 ```
 
 ### 指纹识别配置 (finger.json)
