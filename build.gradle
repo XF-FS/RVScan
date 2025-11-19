@@ -33,6 +33,19 @@ dependencies {
     
     // Apache Commons Collections
     implementation 'org.apache.commons:commons-collections4:4.4'
+    
+    // Gson for JSON parsing (required by APIKit)
+    implementation 'com.google.code.gson:gson:2.10.1'
+    
+    // SnakeYAML for YAML parsing (required by APIKit Swagger)
+    implementation 'org.yaml:snakeyaml:1.33'
+    
+    // Groovy for XML building (required by APIKit SOAP/WSDL parser)
+    implementation 'org.codehaus.groovy:groovy:3.0.17'
+    implementation 'org.codehaus.groovy:groovy-xml:3.0.17'
+    
+    // SOA Model Core (SOAP/WSDL and WADL parser) - from APIKit directory
+    implementation files('lib/soa-model-core-1.6.4-SNAPSHOT-patched-jar-with-dependencies.jar')
 }
 
 test {

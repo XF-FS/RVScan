@@ -1,6 +1,7 @@
 package UI;
 
 import burp.*;
+import APIKit.ui.ApiKitPanel;
 
 import javax.swing.*;
 import javax.swing.table.*;
@@ -19,6 +20,9 @@ public class Tags extends AbstractTableModel implements ITab, IMessageEditorCont
 
     private JSplitPane top;
     private JTabbedPane tabs; // 保存为成员变量
+    
+    // APIKit面板
+    public ApiKitPanel apiKitPanel;
 
     public List<TablesData> Udatas = new ArrayList<>();
     public List<FingerprintData> FingerprintDatas = new ArrayList<>(); // 指纹识别数据
@@ -147,6 +151,10 @@ public class Tags extends AbstractTableModel implements ITab, IMessageEditorCont
                 // 创建指纹识别标签页
                 createFingerprintTab();
                 
+                // 创建APIKit标签页
+                createApiKitTab();
+                
+                // 添加配置标签页
                 tabs.addTab("Config",Config_l.$$$getRootComponent$$$());
 
                 // 添加切换监听，切到VulDisplay时恢复黑色
@@ -208,6 +216,17 @@ public class Tags extends AbstractTableModel implements ITab, IMessageEditorCont
         
         // 添加到标签页
         tabs.addTab("Fingerprint", fingerprintMainSplitPane);
+    }
+    
+    /**
+     * 创建APIKit标签页
+     */
+    private void createApiKitTab() {
+        // 创建APIKit面板
+        apiKitPanel = new ApiKitPanel(callbacks);
+        
+        // 添加到标签页（在Fingerprint和Config之间）
+        tabs.addTab("APIKit", apiKitPanel);
     }
     
     /**

@@ -10,6 +10,7 @@ import utils.UrlRepeat;
 import yaml.YamlUtil;
 import fingerprint.FingerprintScanner;
 import fingerprint.FingerprintConfig;
+import APIKit.ApiKitPassiveScanner;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,6 +49,7 @@ public Set<String> history_url = ConcurrentHashMap.newKeySet();
     public FingerprintScanner fingerprintScanner;  // 指纹扫描器
     public FingerprintConfig fingerprintConfig;    // 指纹识别配置界面
     public utils.ResultFilter resultFilter;        // 结果过滤器
+    public ApiKitPassiveScanner apiKitPassiveScanner;  // APIKit被动扫描器
     public static String Download_Yaml_protocol = "https";
 
     public static String VERSION = "2.4";
@@ -104,6 +106,15 @@ public Set<String> history_url = ConcurrentHashMap.newKeySet();
         this.Config_l = new Config(this);
         this.tags = new Tags(callbacks, Config_l);
         
+        // 初始化APIKit被动扫描器
+        this.apiKitPassiveScanner = new ApiKitPassiveScanner(callbacks);
+        // 将APIKit面板关联到扫描器
+        if (this.tags.apiKitPanel != null) {
+            this.apiKitPassiveScanner.setApiKitPanel(this.tags.apiKitPanel);
+            // 设置ConfigPanel到适配器
+            APIKit.BurpExtenderAdapter.setConfigPanel(this.tags.apiKitPanel.getConfigPanel());
+        }
+        
         call.printOutput("@Info: Loading  RVScan success");
         call.printOutput("@Info: Fingerprint recognition enabled, supports EHole fingerprint library");
         call.printOutput("@Info : Enhance the bypass function by replacing the first/with a bypass statement, and adding a bypass statement after the path with a bypass statement");
@@ -132,6 +143,18 @@ public Set<String> history_url = ConcurrentHashMap.newKeySet();
             if (fingerprintScanner != null && fingerprintScanner.isEnabled()) {
                 String currentPath = this.help.analyzeRequest(baseRequestResponse).getUrl().getPath();
                 performDomainFingerprintScan(baseRequestResponse, Root_Url, currentPath);
+            }
+            
+            // APIKit API文档扫描，独立运行，不受主扫描开关影响
+            if (apiKitPassiveScanner != null && tags != null && tags.apiKitPanel != null) {
+                try {
+                    List<IScanIssue> apiIssues = apiKitPassiveScanner.doPassiveScan(baseRequestResponse);
+                    if (apiIssues != null && !apiIssues.isEmpty()) {
+                        IssueList.addAll(apiIssues);
+                    }
+                } catch (Exception e) {
+                    this.call.printError("[APIKit] Error during API scan: " + e.getMessage());
+                }
             }
             
             // 主扫描功能（敏感目录扫描），受主扫描开关控制
