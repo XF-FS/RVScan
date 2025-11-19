@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group 'org.example'
+version '2.4'
+
+compileJava {
+    options.encoding = "UTF-8"
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    // 使用 implementation 替代 compile
+    implementation 'net.portswigger.burp.extender:burp-extender-api:1.7.13'
+    implementation 'com.intellij:forms_rt:7.0.3'
+    implementation 'org.yaml:snakeyaml:1.28'
+    implementation fileTree(dir: 'lib', includes: ['*.jar'])
+    
+    // Jackson依赖
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.13.0'
+    
+    // Apache Commons Collections
+    implementation 'org.apache.commons:commons-collections4:4.4'
+}
+
+test {
+    useJUnitPlatform()
+}

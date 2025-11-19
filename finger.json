@@ -1,0 +1,39 @@
+{
+	"fingerprint": [	{
+		"cms": "test_title",
+		"method": "keyword",
+		"location": "title",
+		"keyword": ["网动统一通信平台"],
+		"status": 0
+	}, {
+		"cms": "test_body",
+		"method": "keyword",
+		"location": "body",
+		"keyword": ["Kibana"],
+		"status": 0
+	}, 	{
+		"cms": "test_faviconhash",
+		"method": "faviconhash",
+		"location": "body",
+		"keyword": ["-386189083"],
+		"status": 0
+	},{
+		"cms": "AnyShare",
+		"method": "keyword",
+		"location": "body",
+		"keyword": ["anyshare", "create-react-app"],
+		"status": 0
+	},{
+		"cms": "Generic_HTML_Page",
+		"method": "keyword",
+		"location": "body",
+		"keyword": ["<html", "<head"],
+		"status": 0
+	},{
+		"cms": "Generic_404_Page",
+		"method": "keyword",
+		"location": "body",
+		"keyword": ["404", "not found"],
+		"status": 404
+	}]
+}
