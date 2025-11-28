@@ -73,7 +73,7 @@ Windows：（BURP安装位置即burpsuite_pro.jar同级目录）\BurpSuitePro/Co
 - **Config_yaml.yaml** - 扫描规则和绕过配置
 - **finger.json** - 指纹识别规则
 
-## ⚙️ 配置说明
+## 配置说明介绍
 
 ### 扫描规则配置 (Config_yaml.yaml)
 
@@ -137,7 +137,7 @@ Result_Filter_List: [认证失败, 访问失败, 权限不足, Access Denied, Au
 }
 ```
 
-## 🎛️ 功能控制面板
+## 功能控制面板功能介绍
 
 <img width="3200" height="1770" alt="PixPin_2025-07-24_14-45-26" src="https://github.com/user-attachments/assets/1f2801ab-96e9-4315-83ec-c418d592636e" />
 
@@ -157,12 +157,13 @@ Result_Filter_List: [认证失败, 访问失败, 权限不足, Access Denied, Au
 | **Thread Status** | 查看线程状态 | - | - |
 
 
-## 右键菜单功能区别
+
+## 右键菜单功能介绍
 | 特性 | Send To RVScan | Send To RVScan and Head | Force Scan All Paths |
 |------|----------------|-------------------------|----------------------|
 | 扫描范围 | Site Map 所有请求 | Site Map 所有请求 | 仅选中请求 |
 | 请求头 | 默认请求头 | 可自定义请求头 | 默认请求头 |
-| URL 去重 | ✅ 有去重 | ✅ 有去重 | ❌ 无去重 |
+| URL 去重 | 有去重 | 有去重 | 无去重 |
 | 路径扫描 | 根目录 + 路径层级 | 根目录 + 路径层级 | 根目录 + 路径层级 |
 | 适用场景 | 常规扫描 | 需要自定义请求头 | 强制重新扫描 |
 
