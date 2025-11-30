@@ -3,6 +3,9 @@ Bypass_List: ["%2f", "%2e"]
 Bypass_First_List: [css/..;/..;, ..;, js/..;/..;]
 Fingerprint_Paths: ["/"]
 Result_Filter_List: [认证失败, Authentication Failed]
+Static_Extensions: [.js, .css, .jpg, .jpeg, .png, .gif, .bmp, .ico, .svg, .woff, .woff2, .ttf, .eot, .otf, .mp3, .mp4, .avi, .mov, .wmv, .flv, .pdf, .doc, .docx, .xls, .xlsx, .ppt, .pptx, .zip, .rar, .7z, .tar, .gz, .xml, .json, .txt, .log, .swf, .fla, .map]
+Static_Path_Patterns: [/static/, /assets/, /public/, /resources/, /img/, /images/, /css/, /js/, /fonts/, /media/, /uploads/, /files/, /themes/, /template/, /skin/, /style/, /libs/, /lib/, /node_modules/, /bower_components/, /vendor/]
+Static_File_Patterns: [jquery, bootstrap, angular, react, vue, lodash, moment, chart, d3.js, three.js, axios, zepto]
 Load_List:
 - {loaded: true, re: springframework|reloadByURL|createJNDIRealm, method: GET, name: Spring
     Jolokia|Rce, id: 8, state: '200', type: Spring, url: /actuator/jolokia/list, info: 'Spring
